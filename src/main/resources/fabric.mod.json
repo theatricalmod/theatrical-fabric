@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "theatrical",
+  "version": "${version}",
+  "name": "Theatrical",
+  "description": "Theatrical mod for 1.14",
+  "authors": [
+    "Rushmead"
+  ],
+  "contact": {
+    "homepage": "https://theatricalmod.dev/",
+    "sources": "https://github.com/theatricalmod/theatrical"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/theatrical/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.theatricalmod.theatrical.Theatrical"
+    ],
+    "client": [
+      "dev.theatricalmod.theatrical.client.TheatricalClient"
+    ]
+  },
+  "mixins": [],
+  "requires": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
