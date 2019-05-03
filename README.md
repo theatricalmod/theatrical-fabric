@@ -1,16 +1,5 @@
-# Fabric Example Mod
+[![](https://ci.615283.net/app/rest/builds/buildType:(id:TheatricalFabric_Build)/statusIcon)](https://ci.615283.net/viewType.html?buildTypeId=TheatricalFabric_Build&guest=1)
+[![](https://img.shields.io/discord/481830554447118371.svg)](https://discord.gg/7qMs5d6)
 
-## Setup
 
-1. Edit build.gradle and mod.json to suit your needs.
-    * The "mixins" object can be removed from mod.json if you do not need to use mixins.
-    * Please replace all occurences of "modid" with your own mod ID - sometimes, a different string may also suffice.
-2. Run the following command:
-
-```
-./gradlew idea
-```
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+# Theatrical Fabric Version
