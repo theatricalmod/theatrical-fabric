@@ -1,12 +1,8 @@
-package dev.theatricalmod.theatrical.blocks;
+package dev.theatricalmod.theatrical.blocks.entity.lights;
 
 import dev.theatricalmod.theatrical.registry.TheatricalBlockEntities;
-import dev.theatricalmod.theatrical.utils.MovingHeadLight;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.Tickable;
-import net.minecraft.world.World;
-import therealfarfetchd.illuminate.client.api.Lights;
 
 public class MovingHeadBlockEntity extends BlockEntity implements Tickable {
     private float tilt, pan, intensity;
@@ -45,7 +41,7 @@ public class MovingHeadBlockEntity extends BlockEntity implements Tickable {
             if(ticks > 1){
                 ticks = 0;
                 pan++;
-//                tilt++;
+                tilt++;
             }
     }
 }

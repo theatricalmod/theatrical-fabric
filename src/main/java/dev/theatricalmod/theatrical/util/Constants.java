@@ -1,4 +1,4 @@
-package dev.theatricalmod.theatrical.utils;
+package dev.theatricalmod.theatrical.util;
 
 public class Constants {
 

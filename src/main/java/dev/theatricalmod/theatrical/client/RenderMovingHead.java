@@ -1,7 +1,7 @@
 package dev.theatricalmod.theatrical.client;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import dev.theatricalmod.theatrical.blocks.MovingHeadBlockEntity;
+import dev.theatricalmod.theatrical.blocks.entity.lights.MovingHeadBlockEntity;
 import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.VertexFormats;
@@ -38,7 +38,7 @@ public class RenderMovingHead extends BlockEntityRenderer<MovingHeadBlockEntity>
 
 
     public void renderLightBeam(MovingHeadBlockEntity tileFresnel, float partialTicks,
-        float alpha, double beamSize, double length, int color, double x, double y, double z) {
+                                float alpha, double beamSize, double length, int color, double x, double y, double z) {
         Tessellator tessellator = Tessellator.getInstance();
         BufferBuilder render = tessellator.getBufferBuilder();
 //        render.setOffset(x, y, z);
@@ -54,7 +54,7 @@ public class RenderMovingHead extends BlockEntityRenderer<MovingHeadBlockEntity>
         GlStateManager.translated(0.5, 0.8, 0);
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA,
-            GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         int func = GL11.glGetInteger(GL11.GL_ALPHA_TEST_FUNC);
         float ref = GL11.glGetFloat(GL11.GL_ALPHA_TEST_REF);
         GlStateManager.alphaFunc(GL11.GL_ALWAYS, 0);
@@ -68,32 +68,32 @@ public class RenderMovingHead extends BlockEntityRenderer<MovingHeadBlockEntity>
 
         //Do the actual beam vertexes
         render.vertex((width * endMultiplier) / 32D, (width * endMultiplier) / 32D, -length).color(r, g, b, 0)
-            .next();
+                .next();
         render.vertex(width / 32D, width / 32D, 0).color(r, g, b, a).next();
         render.vertex(width / 32D, (-width) / 32D, 0).color(r, g, b, a).next();
         render.vertex((width * endMultiplier) / 32D, (-width * endMultiplier) / 32D, -length).color(r, g, b, 0)
-            .next();
+                .next();
 
         render.vertex((-width * endMultiplier) / 32D, (-width * endMultiplier) / 32D, -length).color(r, g, b, 0)
-            .next();
+                .next();
         render.vertex((-width) / 32D, (-width) / 32D, 0).color(r, g, b, a).next();
         render.vertex(-width / 32D, width / 32D, 0).color(r, g, b, a).next();
         render.vertex((-width * endMultiplier) / 32D, (width * endMultiplier) / 32D, -length).color(r, g, b, 0)
-            .next();
+                .next();
 
         render.vertex((-width * endMultiplier) / 32D, (width * endMultiplier) / 32D, -length).color(r, g, b, 0)
-            .next();
+                .next();
         render.vertex((-width) / 32D, width / 32D, 0).color(r, g, b, a).next();
         render.vertex(width / 32D, width / 32D, 0).color(r, g, b, a).next();
         render.vertex((width * endMultiplier) / 32D, (width * endMultiplier) / 32D, -length).color(r, g, b, 0)
-            .next();
+                .next();
 
         render.vertex((width * endMultiplier) / 32D, (-width * endMultiplier) / 32D, -length).color(r, g, b, 0)
-            .next();
+                .next();
         render.vertex(width / 32D, (-width) / 32D, 0).color(r, g, b, a).next();
         render.vertex((-width) / 32D, (-width) / 32D, 0).color(r, g, b, a).next();
         render.vertex((-width * endMultiplier) / 32D, (-width * endMultiplier) / 32D, -length).color(r, g, b, 0)
-            .next();
+                .next();
 //        GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 //        render.setOffset(0, 0, 0);
         tessellator.draw();
@@ -103,8 +103,8 @@ public class RenderMovingHead extends BlockEntityRenderer<MovingHeadBlockEntity>
         GlStateManager.enableTexture();
         GlStateManager.alphaFunc(func, ref);
         GlStateManager.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA,
-            GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE,
-            GlStateManager.DestFactor.ZERO);
+                GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE,
+                GlStateManager.DestFactor.ZERO);
         GlStateManager.disableBlend();
         GlStateManager.depthMask(true);
         GlStateManager.popMatrix();

@@ -1,15 +1,13 @@
-package dev.theatricalmod.theatrical.utils;
+package dev.theatricalmod.theatrical.util;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import dev.theatricalmod.theatrical.Theatrical;
-import dev.theatricalmod.theatrical.blocks.MovingHeadBlockEntity;
-import dev.theatricalmod.theatrical.registry.TheatricalBlockEntities;
+import dev.theatricalmod.theatrical.blocks.entity.lights.MovingHeadBlockEntity;
+import dev.theatricalmod.theatrical.registry.TheatricalBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.texture.TextureManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import therealfarfetchd.illuminate.client.api.Light;
 import therealfarfetchd.illuminate.client.api.Lights;
 import therealfarfetchd.qcommon.croco.Vec3;
@@ -19,7 +17,7 @@ public class MovingHeadLight implements Light {
     private MovingHeadBlockEntity be;
     private float tilt = 0, pan = 0;
 
-    private boolean wait =  true;
+    private boolean wait = true;
 
     public MovingHeadLight(MovingHeadBlockEntity be) {
         this.be = be;
@@ -27,7 +25,7 @@ public class MovingHeadLight implements Light {
         pan = be.getPan();
     }
 
-    public int getTexture(){
+    public int getTexture() {
         TextureManager textureManager = MinecraftClient.getInstance().getTextureManager();
         Identifier id = new Identifier(Constants.MOD_ID, "textures/test.png");
         textureManager.bindTexture(id);
@@ -61,7 +59,7 @@ public class MovingHeadLight implements Light {
     public void prepare(float delta) {
         BlockState state = MinecraftClient.getInstance().world.getBlockState(be.getPos());
 
-        if (state.getBlock() != Theatrical.MOVING_HEAD) {
+        if (!state.getBlock().equals(TheatricalBlocks.MOVING_HEAD_BLOCK)) {
             if (!wait) Lights.getInstance().remove(this);
             return;
         } else {
@@ -74,7 +72,7 @@ public class MovingHeadLight implements Light {
 
     @Override
     public float getAspect() {
-        return 768/576F;
+        return 768 / 576F;
     }
 
     @Override
