@@ -5,11 +5,12 @@
   "name": "Theatrical",
   "description": "Theatrical mod for 1.14",
   "authors": [
-    "Rushmead"
+    "Rushmead",
+    "jamesxsc"
   ],
   "contact": {
     "homepage": "https://theatricalmod.dev/",
-    "sources": "https://github.com/theatricalmod/theatrical"
+    "sources": "https://github.com/theatricalmod/theatrical-fabric"
   },
   "license": "CC0-1.0",
   "icon": "assets/theatrical/icon.png",

@@ -1,7 +1,7 @@
 package dev.theatricalmod.theatrical.blocks.lights;
 
 import dev.theatricalmod.theatrical.blocks.entity.lights.MovingHeadBlockEntity;
-import dev.theatricalmod.theatrical.item.group.TheatricalItemGroups;
+import dev.theatricalmod.theatrical.items.group.TheatricalItemGroups;
 import dev.theatricalmod.theatrical.util.MovingHeadLight;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -9,7 +9,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
@@ -48,12 +47,13 @@ public class MovingHeadBlock extends Block implements BlockEntityProvider {
         return BlockRenderType.MODEL;
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onPlaced(World world_1, BlockPos blockPos_1, BlockState blockState_1, LivingEntity livingEntity_1, ItemStack itemStack_1) {
-        if (world_1.getBlockEntity(blockPos_1) != null) {
+        if (world_1.getBlockEntity(blockPos_1) instanceof MovingHeadBlockEntity) {
             if (world_1.isClient) {
                 MinecraftClient.getInstance().execute(() -> Lights.getInstance().add(
-                        new MovingHeadLight((MovingHeadBlockEntity) Objects.requireNonNull(world_1.getBlockEntity(blockPos_1)))));
+                        new MovingHeadLight((MovingHeadBlockEntity) world_1.getBlockEntity(blockPos_1))));
             }
         }
     }

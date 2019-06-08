@@ -9,7 +9,7 @@ import net.minecraft.util.registry.Registry;
 
 public class TheatricalBlockEntities {
 
-    public static final BlockEntityType<MovingHeadBlockEntity> MOVING_HEAD = BlockEntityType.Builder.create(MovingHeadBlockEntity::new).build(null);
+    public static final BlockEntityType<MovingHeadBlockEntity> MOVING_HEAD = BlockEntityType.Builder.create(MovingHeadBlockEntity::new, TheatricalBlocks.MOVING_HEAD_BLOCK).build(null);
 
     public static void init() {
         register("moving_head", MOVING_HEAD);

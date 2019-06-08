@@ -41,7 +41,7 @@ public class MovingHeadBlockEntity extends BlockEntity implements Tickable {
             if(ticks > 1){
                 ticks = 0;
                 pan++;
-                tilt++;
+               // tilt++;
             }
     }
 }
