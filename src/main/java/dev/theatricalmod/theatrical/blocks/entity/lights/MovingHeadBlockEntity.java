@@ -3,6 +3,7 @@ package dev.theatricalmod.theatrical.blocks.entity.lights;
 import dev.theatricalmod.theatrical.registry.TheatricalBlockEntities;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.Tickable;
+import net.minecraft.util.registry.Registry;
 
 public class MovingHeadBlockEntity extends BlockEntity implements Tickable {
     private float tilt, pan, intensity;
