@@ -17,6 +17,7 @@ public enum ChannelType {
     TILT,
     FOCUS,
     ZOOM,
+    CUSTOM,
     ;
 
 }
