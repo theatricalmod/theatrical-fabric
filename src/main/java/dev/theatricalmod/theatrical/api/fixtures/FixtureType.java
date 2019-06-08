@@ -5,7 +5,8 @@ import java.util.function.Supplier;
 public enum FixtureType {
 
     INTELLIGENT,
-    TUNGSTEN;
+    TUNGSTEN,
+    ;
 
     //needs to be migrated to BlockEntity
 
