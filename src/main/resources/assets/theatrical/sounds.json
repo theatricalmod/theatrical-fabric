@@ -1,0 +1,10 @@
+{
+  "test": {
+    "sounds": [
+      {
+        "name": "theatrical:test",
+        "stream": true
+      }
+    ]
+  }
+}

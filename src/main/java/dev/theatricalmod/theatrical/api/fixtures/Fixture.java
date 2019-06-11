@@ -12,11 +12,9 @@ public class Fixture {
 
     private static Registry<Fixture> REGISTRY;
 
-    public static void createRegistry() {
-        if (REGISTRY == null) {
-            Identifier registryName = new Identifier(Constants.MOD_ID, "fixtures");
-            REGISTRY = Registry.register(Registry.REGISTRIES, registryName, new SimpleRegistry<Fixture>());
-        }
+    static {
+        Identifier registryName = new Identifier(Constants.MOD_ID, "fixtures");
+      //  REGISTRY = Registry.register(Registry.REGISTRIES, registryName, new SimpleRegistry<>());
     }
 
     public static Registry<Fixture> getRegistry() {
