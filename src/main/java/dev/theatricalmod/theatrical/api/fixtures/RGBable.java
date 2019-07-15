@@ -1,6 +1,6 @@
 package dev.theatricalmod.theatrical.api.fixtures;
 
-public interface IRGB {
+public interface RGBable {
 
     int getColorHex();
 

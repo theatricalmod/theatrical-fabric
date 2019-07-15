@@ -16,10 +16,10 @@
 
 package dev.theatricalmod.theatrical.blocks.fixtures.base;
 
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.block.entity.BlockEntity;
 
-public interface IHasTileEntity {
+public interface IHasBlockEntity {
 
-    Class<? extends TileEntity> getTileEntity();
+    Class<? extends BlockEntity> getBlockEntity();
 
 }

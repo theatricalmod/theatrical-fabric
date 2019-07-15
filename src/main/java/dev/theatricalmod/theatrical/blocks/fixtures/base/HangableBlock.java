@@ -14,11 +14,11 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-public class BlockHangable extends DirectionalBlock {
+public class HangableBlock extends DirectionalBlock {
 
     public Direction[] allowedPlaces;
 
-    public BlockHangable(FabricBlockSettings blockSettings, ItemGroup itemGroup, Direction[] allowedPlaces) {
+    public HangableBlock(FabricBlockSettings blockSettings, ItemGroup itemGroup, Direction[] allowedPlaces) {
         super(blockSettings, itemGroup);
         this.allowedPlaces = allowedPlaces;
     }

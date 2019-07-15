@@ -2,7 +2,7 @@ package dev.theatricalmod.theatrical.api.fixtures;
 
 import net.minecraft.client.render.model.BakedModel;
 
-public interface IFixtureModelProvider {
+public interface FixtureModelProvider {
 
     HangableType getHangType();
 
