@@ -23,7 +23,9 @@
       "dev.theatricalmod.theatrical.client.TheatricalClient"
     ]
   },
-  "mixins": [],
+  "mixins": [
+    "theatrical.mixins.json"
+  ],
   "requires": {
     "fabricloader": ">=0.4.0",
     "fabric": "*"

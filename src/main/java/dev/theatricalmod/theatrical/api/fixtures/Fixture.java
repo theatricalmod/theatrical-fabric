@@ -3,32 +3,33 @@ package dev.theatricalmod.theatrical.api.fixtures;
 import dev.theatricalmod.theatrical.api.ChannelsDefinition;
 import dev.theatricalmod.theatrical.util.Constants;
 import net.minecraft.client.render.model.BakedModel;
+import net.minecraft.client.util.ModelIdentifier;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.MutableRegistry;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.SimpleRegistry;
 import org.jetbrains.annotations.Nullable;
 
 public class Fixture {
 
-    private static Registry<Fixture> REGISTRY;
+    private static MutableRegistry<Fixture> REGISTRY;
 
     static {
         Identifier registryName = new Identifier(Constants.MOD_ID, "fixtures");
-      //  REGISTRY = Registry.register(Registry.REGISTRIES, registryName, new SimpleRegistry<>());
+        REGISTRY = Registry.register(Registry.REGISTRIES, registryName, new SimpleRegistry<>());
     }
 
     public static Registry<Fixture> getRegistry() {
         return REGISTRY;
     }
 
-
     private Identifier name;
     private FixtureType fixtureType;
     private HangableType hangableType;
-    private Identifier staticModelLocation;
-    private Identifier hookedModelLocation;
-    private Identifier tiltModelLocation;
-    private Identifier panModelLocation;
+    private ModelIdentifier staticModelLocation;
+    private ModelIdentifier hookedModelLocation;
+    private ModelIdentifier tiltModelLocation;
+    private ModelIdentifier panModelLocation;
     private float[] tiltRotationPosition;
     private float[] panRotationPosition;
     private float[] beamStartPosition;
@@ -54,7 +55,7 @@ public class Fixture {
      * @param fixtureType          The Type of Fixture
      * @param hangableType         How the fixture hangs
      * @param staticModelLocation  The location of the static model
-     * @param hookedModelLocation  The location of the hooked model (null if {@link dev.theatricalmod.theatrical.api.fixtures.HangableType.NONE})
+     * @param hookedModelLocation  The location of the hooked model (null if {@link dev.theatricalmod.theatrical.api.fixtures.HangableType})
      * @param tiltModelLocation    The location of the model that tilts
      * @param panModelLocation     The Location of the model that pans
      * @param tiltRotationPosition The middle of the tilt rotation area
@@ -65,8 +66,8 @@ public class Fixture {
      * @param rayTraceRotation     Any extra raytracing rotation
      */
     public Fixture(
-            Identifier name, FixtureType fixtureType, HangableType hangableType, Identifier staticModelLocation,
-            @Nullable Identifier hookedModelLocation, Identifier tiltModelLocation, Identifier panModelLocation, float[] tiltRotationPosition,
+            Identifier name, FixtureType fixtureType, HangableType hangableType, ModelIdentifier staticModelLocation,
+            @Nullable ModelIdentifier hookedModelLocation, ModelIdentifier tiltModelLocation, ModelIdentifier panModelLocation, float[] tiltRotationPosition,
             float[] panRotationPosition, float[] beamStartPosition, float defaultRotation, float beamWidth,
             float rayTraceRotation, float maxLightDistance, int maxEnergy, int energyUse, int energyUseTimer,
             int channelCount, ChannelsDefinition channelsDefinition
@@ -101,19 +102,19 @@ public class Fixture {
         return hangableType;
     }
 
-    public Identifier getStaticModelLocation() {
+    public ModelIdentifier getStaticModelLocation() {
         return staticModelLocation;
     }
 
-    public Identifier getTiltModelLocation() {
+    public ModelIdentifier getTiltModelLocation() {
         return tiltModelLocation;
     }
 
-    public Identifier getPanModelLocation() {
+    public ModelIdentifier getPanModelLocation() {
         return panModelLocation;
     }
 
-    public Identifier getHookedModelLocation() {
+    public ModelIdentifier getHookedModelLocation() {
         return hookedModelLocation;
     }
 

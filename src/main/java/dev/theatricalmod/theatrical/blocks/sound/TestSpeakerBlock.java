@@ -37,7 +37,7 @@ public class TestSpeakerBlock extends Block implements BlockEntityProvider {
     public void onPlaced(World world_1, BlockPos blockPos_1, BlockState blockState_1, LivingEntity livingEntity_1, ItemStack itemStack_1) {
         BlockEntity be = world_1.getBlockEntity(blockPos_1);
         if (be instanceof TestSpeakerBlockEntity) {
-            ((TestSpeakerBlockEntity) be).playSound(Theatrical.TEST_SOUND);
+            ((TestSpeakerBlockEntity) be).playSound(Theatrical.instance.TEST_SOUND);
         }
         super.onPlaced(world_1, blockPos_1, blockState_1, livingEntity_1, itemStack_1);
     }

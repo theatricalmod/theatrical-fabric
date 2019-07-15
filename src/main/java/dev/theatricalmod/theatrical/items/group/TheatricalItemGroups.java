@@ -12,7 +12,7 @@ public class TheatricalItemGroups {
 
     public static final ItemGroup LIGHTS_ITEM_GROUP = FabricItemGroupBuilder
             .create(new Identifier(Constants.MOD_ID, "lights_item_group"))
-            .icon(() -> new ItemStack(TheatricalBlocks.MOVING_HEAD_BLOCK.asItem()))
+            .icon(() -> new ItemStack(TheatricalItems.BLANK_GEL_ITEM.asItem()))
             .build();
 
     public static final ItemGroup LIGHTING_GELS_ITEM_GROUP = FabricItemGroupBuilder

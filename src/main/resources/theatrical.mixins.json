@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "dev.theatricalmod.theatrical.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "BakedModelManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
